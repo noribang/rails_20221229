@@ -5,7 +5,10 @@ class CheeseController < ApplicationController
     
     # To return JSON use render method.
     def index
+        # byebug
+        
         # render json: { hello: "Cheeseburger!!!", today: "Thursday"}
+
         cheeses = Cheese.all
         render json: cheeses
     end
