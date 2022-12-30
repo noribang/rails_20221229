@@ -27,14 +27,16 @@ class CheeseController < ApplicationController
 
         ## Returns hash of row in db table
         cheese = Cheese.find_by(id: params[:id])
-        # Returns custom JSON.
-        render json: {
-            id: cheese.id,
-            name: cheese.name,
-            price: cheese.price,
-            is_best_seller: cheese.is_best_seller
-        }
+        ## Returns custom JSON.
+        # render json: {
+        #     id: cheese.id,
+        #     name: cheese.name,
+        #     price: cheese.price,
+        #     is_best_seller: cheese.is_best_seller
+        # }
    
+        render json: cheese, except: [:created_at, :updated_at], methods: [:summary]
+
     end
 
 end
