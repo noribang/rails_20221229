@@ -15,7 +15,8 @@ class CheeseController < ApplicationController
         # Returns all rows, each as hash.
         cheeses = Cheese.all
         # Serialization.
-        render json: cheeses, only: [:id, :name, :price, :is_best_seller]
+        # render json: cheeses, only: [:id, :name, :price, :is_best_seller]
+        render json: cheeses, except: [:created_at, :updated_at]
         
     end
     # Return JSON by :id param.
