@@ -12,5 +12,9 @@ class CheeseController < ApplicationController
         cheeses = Cheese.all
         render json: cheeses
     end
+    # Return JSON by :id param.
+    def show
+        
+    end
 
 end
