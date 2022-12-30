@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   # GET request to /cheese map to cheese#index
   get "cheese", to: "cheese#index"
+  # GET request to /cheeses/:id to cheese#show
+  get "cheeses/:id", to: "cheeses#show"
 end
