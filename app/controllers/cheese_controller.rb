@@ -35,8 +35,12 @@ class CheeseController < ApplicationController
         #     is_best_seller: cheese.is_best_seller
         # }
    
-        render json: cheese, except: [:created_at, :updated_at], methods: [:summary]
-
+        ## Error messaging.
+        if cheese
+            render json: cheese, except: [:created_at, :updated_at], methods: [:summary]
+        else
+            render json: { error: 'Cheese not found.'}
+        end
     end
 
 end
