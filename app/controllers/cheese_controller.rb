@@ -9,8 +9,14 @@ class CheeseController < ApplicationController
         
         # render json: { hello: "Cheeseburger!!!", today: "Thursday"}
 
+        # cheeses = Cheese.all
+        # render json: cheeses
+        
+        # Returns all rows, each as hash.
         cheeses = Cheese.all
-        render json: cheeses
+        # Serialization.
+        render json: cheeses, only: [:id, :name, :price, :is_best_seller]
+        
     end
     # Return JSON by :id param.
     def show
