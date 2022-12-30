@@ -14,7 +14,9 @@ class CheeseController < ApplicationController
     end
     # Return JSON by :id param.
     def show
-        
+        # byebug
+        cheese = Cheese.find(params[:id])
+        render json: cheese
     end
 
 end
