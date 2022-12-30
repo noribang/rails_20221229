@@ -14,9 +14,20 @@ class CheeseController < ApplicationController
     end
     # Return JSON by :id param.
     def show
-        # byebug
-        cheese = Cheese.find(params[:id])
-        render json: cheese
+        # byebug    
+        # cheese = Cheese.find(params[:id])
+        # render json: cheese
+
+        ## Returns hash of row in db table
+        cheese = Cheese.find_by(id: params[:id])
+        # Returns custom JSON.
+        render json: {
+            id: cheese.id,
+            name: cheese.name,
+            price: cheese.price,
+            is_best_seller: cheese.is_best_seller
+        }
+   
     end
 
 end
